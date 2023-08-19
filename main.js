@@ -1,21 +1,23 @@
 import './style.css'
 import { calculateCalories } from './calculateCalories.js'
+import { result } from './result'
+
 
 document.querySelector('#app').innerHTML = `
   <div>
     <h1>Calculadora de Calorias</h1>
-    <form>
-      <label for="age">Edad</label>
-      <input id="age" type="number" min="0" max="100" />
+    <form id="form" method="POST">
+      <label for="age">Edad (años)</label>
+      <input id="age" type="number" name="age" min="0" max="100" required />
 
-      <label for="weight">Peso</label>
-      <input id="weight" type="number" min="0" max="200" />
+      <label for="weight">Peso (kg)</label>
+      <input id="weight" type="number" name="weight" min="0" max="200" required />
 
-      <label for="height">Altura</label>
-      <input id="height" type="number" />
+      <label for="height">Altura (cm)</label>
+      <input id="height" type="number" name="height" min="0" max="250" required />
 
       <label for="activity">Actividad</label>
-      <select id="activity">
+      <select id="activity" name="activity">
         <option value="1.2">Poco o ningún ejercicio</option>
         <option value="1.375">Ejercicio ligero (1-3 días a la semana)</option>
         <option value="1.55">Ejercicio moderado (3-5 días a la semana)	</option>
@@ -35,8 +37,19 @@ document.querySelector('#app').innerHTML = `
         </div>
       </fieldset>
 
-      <button id="calculate" type="button"></button>
+      <button id="calculate" type="submit">Calcular</button>
     </form>
-    </div>`
+    <div id="result"></div>
+  </div>`
 
-calculateCalories(document.querySelector('#calculate'))
+document.getElementById('form').addEventListener('submit', e => {
+  e.preventDefault()
+
+  const data = Object.fromEntries(new FormData(e.target))
+  
+  result(document.getElementById('result'), calculateCalories(data))
+  e.target.reset()
+})
+
+document.getElementById('age').focus()
+
