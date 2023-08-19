@@ -67,7 +67,7 @@ form {
   row-gap: 0.2em;
 }
 
-input[type="number"] {
+input:is([type="text"], [type="number"]) {
   width: 200px;
   margin-bottom: 0.5em;
   padding: 8px 4px;
@@ -77,8 +77,7 @@ input[type="number"] {
 select {
   margin-bottom: 0.5em;
   padding: 8px 4px;
-  max-width: 200px;
-  width: fit-content;
+  width: 200px;
 }
 
 fieldset {

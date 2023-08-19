@@ -7,6 +7,19 @@ document.querySelector('#app').innerHTML = `
   <div>
     <h1>Calculadora de Calorias</h1>
     <form id="form" method="POST">
+      <label for="name">Nombre</label>
+      <input id="name" type="text" name="name" minLength="2" autofocus required/>
+
+      <label for="type-document">Tipo documento</label>
+      <select id="type-document" name="type-document">
+        <option value="CC">Cedúla de ciudadania</option>
+        <option value="TI">Tarjeta de identidad</option>
+        <option value="PA">Pasaporte</option>
+      </select>
+
+      <label for"document">Número de documento</label>
+      <input id="document" type="number" name="document" min="0" max="99999999999" required />
+
       <label for="age">Edad (años)</label>
       <input id="age" type="number" name="age" min="0" max="100" required />
 
@@ -46,10 +59,12 @@ document.getElementById('form').addEventListener('submit', e => {
   e.preventDefault()
 
   const data = Object.fromEntries(new FormData(e.target))
-  
-  result(document.getElementById('result'), calculateCalories(data))
+
+  result(document.getElementById('result'), {
+    calories: calculateCalories(data),
+    name: data.name,
+    typeDocument: data['type-document'],
+    documentNumber: data.document
+  })
   e.target.reset()
 })
-
-document.getElementById('age').focus()
-

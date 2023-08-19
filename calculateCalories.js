@@ -8,7 +8,7 @@ export function calculateCalories({ weight, height, age, activity, genre }) {
     tmb = (10 * weight) + (6.25 * height) - (5 * age) + 5
   }
 
- return Math.round(tmb * parseFloat(activity))
+  return Math.round(tmb * parseFloat(activity))
 }
 
 // * Hombres	TMB = (10 x peso en kg) + (6,25 × altura en cm) - (5 × edad en años) + 5
