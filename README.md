@@ -2,7 +2,7 @@
 
 Workshop 02 - Javascript 
 
-Desplegado en:
+Desplegado en: https://workshop-02-peaku.netlify.app/
 
 ## Calculadora de calorías
 Permite saber al usuario la cantidad de calorías requeridas
@@ -26,8 +26,8 @@ el paciente dependiendo de su edad:
 
 ## ✨ Enlaces
 
-* 📚 [Repositorio]()
-* 📚 [Sitio Web]()
+* 📚 [Repositorio](https://github.com/JhonEduard26/workshop-02)
+* 📚 [Sitio Web](https://workshop-02-peaku.netlify.app/)
 
 ## 😀 Autor
 
