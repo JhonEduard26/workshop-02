@@ -18,7 +18,7 @@ un mensaje como el siguiente:
 NO.(número de documento), requiere un total de (cantidad calorías) kcal
 para el sostenimiento de su TBM"
 
-🔲 El programa debe informar al usuario a que grupo poblacional pertenece
+✅ El programa debe informar al usuario a que grupo poblacional pertenece
 el paciente dependiendo de su edad:
     - Entre 15 y 29 años: Joven.
     - Entre 30 y 59 años: adultos.

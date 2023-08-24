@@ -64,7 +64,8 @@ document.getElementById('form').addEventListener('submit', e => {
     calories: calculateCalories(data),
     name: data.name,
     typeDocument: data['type-document'],
-    documentNumber: data.document
+    documentNumber: data.document,
+    age: data.age,
   })
   e.target.reset()
 })
